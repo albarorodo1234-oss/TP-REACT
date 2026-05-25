@@ -29,3 +29,58 @@ Recorre un array original y **devuelve un nuevo array transformado**. En React, 
 productos.map((producto) => (
   <Card titulo={producto.nombre} />
 ))
+
+# 📚 Teoría primero — ¿Qué es el spread operator y toggle?
+
+## Spread operator `...`
+Copia todas las propiedades de un objeto:
+
+```jsx
+const tarea = { id: 1, texto: 'Estudiar', completada: false }
+
+// Copiamos todo y solo cambiamos completada
+{ ...tarea, completada: true }
+
+// Resultado:
+{ id: 1, texto: 'Estudiar', completada: true }
+```
+
+---
+
+## Toggle
+Cambiar entre `true` y `false`:
+
+```jsx
+completada: !t.completada
+
+// Si era false → pasa a true
+// Si era true → pasa a false
+```
+
+---
+
+## ¿Por qué no modificar el array directamente?
+
+En React nunca mutamos el estado, siempre creamos uno nuevo:
+
+```jsx
+// ❌ MAL — muta el estado directamente
+tareas[0].completada = true
+
+// ✅ BIEN — crea un array nuevo con .map()
+tareas.map(t =>
+  t.id === id
+    ? { ...t, completada: !t.completada }
+    : t
+)
+```
+
+---
+
+## Eliminar con `.filter()`
+
+Devuelve todos menos el que queremos borrar:
+
+```jsx
+tareas.filter(t => t.id !== id)
+```
