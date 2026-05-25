@@ -2,6 +2,10 @@
 
 Trabajo Práctico N°6 de Prácticas Profesionalizantes II — Programador Junior.
 
+## 🌐 App en vivo
+
+https://tp-react-eta-ten.vercel.app/
+
 ## Descripción
 
 Aplicación React con múltiples componentes interactivos que demuestran
