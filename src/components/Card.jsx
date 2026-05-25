@@ -1,8 +1,11 @@
-function Card({ titulo, descripcion }) {
+function Card({ titulo, descripcion, imagen, precio = 0, children }) {
   return (
-    <div>
+    <div className="card">
+      <img src={imagen} alt={titulo} />
       <h2>{titulo}</h2>
       <p>{descripcion}</p>
+      <p className="precio">$ {precio}</p>
+      {children}
     </div>
   )
 }
