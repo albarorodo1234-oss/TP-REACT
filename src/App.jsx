@@ -4,14 +4,16 @@ import Card from './components/Card'
 import './App.css'
 import Contador from './components/Contador'
 import ContactForm from './components/ContactForm'
+import ProductList from './components/ProductList'
 
 function App() {
   return (
     <div>
       <Header />
       <main className="cards-container">
-
-        
+        <Contador />
+        <ContactForm />
+        <ProductList />
         
 
         <Card
@@ -43,8 +45,6 @@ function App() {
           <p>¡Oferta del mes!</p>
         </Card>
 
-        <Contador />
-        <ContactForm />
         
 
       </main>

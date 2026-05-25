@@ -89,3 +89,29 @@
   background-color: #f5f5f5;
   border-radius: 4px;
 }
+
+/* Estilos para Lista de Productos */
+
+.product-list {
+  padding: 16px;
+}
+
+.filtros {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filtros select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.filtros label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
