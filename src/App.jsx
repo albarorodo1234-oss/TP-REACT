@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Card from './components/Card'
 import './App.css'
 import Contador from './components/Contador'
+import ContactForm from './components/ContactForm'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header />
       <main className="cards-container">
 
-        <Contador />
+        
+        
 
         <Card
           titulo="Notebook Lenovo"
@@ -40,6 +42,10 @@ function App() {
         >
           <p>¡Oferta del mes!</p>
         </Card>
+
+        <Contador />
+        <ContactForm />
+        
 
       </main>
       <Footer />
