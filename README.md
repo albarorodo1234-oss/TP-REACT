@@ -1,86 +1,37 @@
-Tips PUNTO 3:
+# TP6 — React.js: Componentes, Estado y Listas
 
-"useState es necesario porque una variable normal no actualiza la pantalla en React"
-"Siempre uso setCount para modificar el estado, nunca toco count directamente"
-"El botón -1 tiene disabled={count === 0} para que no baje de cero"
-"El color lo manejo con un operador ternario dentro del objeto de estilos"
-"Cada vez que el estado cambia, React vuelve a renderizar el componente automáticamente" 
+Trabajo Práctico N°6 de Prácticas Profesionalizantes II — Programador Junior.
 
-PUNTO 4 - FORMULARIO
+## Descripción
 
-"Un input controlado tiene su valor ligado a un estado de React con value y onChange"
-"Cada tecla que presiona el usuario dispara el onChange que actualiza el estado"
-"El preview en vivo funciona solo porque React re-renderiza cada vez que el estado cambia"
-"e.preventDefault() evita que el formulario recargue la página al enviarse"
-"La validación es simple: si cualquier campo está vacío, el botón queda deshabilitado"
+Aplicación React con múltiples componentes interactivos que demuestran
+el uso de props, estado con useState, eventos, renderizado condicional
+y listas dinámicas con .map() y key.
 
-# 📚 PUNTO 5 / Teoría de React: Manejo de Arrays (.map y .filter)
+## Tecnologías
 
-En esta sección guardo mis apuntes sobre cómo manipular colecciones de datos en JavaScript para renderizarlos dinámicamente en componentes de React.
+- React.js
+- Vite
+- JavaScript
+- CSS con variables
 
----
+## Componentes
 
-## 🔄 1. Método `.map()`
-Recorre un array original y **devuelve un nuevo array transformado**. En React, es el método por excelencia que usamos para convertir datos puros (objetos) en componentes visuales (JSX).
+- Header — navbar con título y links
+- Footer — copyright con año dinámico
+- Card — tarjeta reutilizable con props
+- Contador — contador interactivo con useState
+- ContactForm — formulario controlado con preview en vivo
+- ProductList — lista filtrable por categoría y stock
+- TodoApp — CRUD completo de tareas
 
-### 💻 Ejemplo de uso en React:
-```jsx
-// Convierte cada objeto producto del array en un componente <Card />
-productos.map((producto) => (
-  <Card titulo={producto.nombre} />
-))
+## Instrucciones
 
-# 📚 Teoría primero — ¿Qué es el spread operator y toggle?
+npm install
+npm run dev
 
-## Spread operator `...`
-Copia todas las propiedades de un objeto:
+Abrí http://localhost:5173 en el navegador.
 
-```jsx
-const tarea = { id: 1, texto: 'Estudiar', completada: false }
+## Autor
 
-// Copiamos todo y solo cambiamos completada
-{ ...tarea, completada: true }
-
-// Resultado:
-{ id: 1, texto: 'Estudiar', completada: true }
-```
-
----
-
-## Toggle
-Cambiar entre `true` y `false`:
-
-```jsx
-completada: !t.completada
-
-// Si era false → pasa a true
-// Si era true → pasa a false
-```
-
----
-
-## ¿Por qué no modificar el array directamente?
-
-En React nunca mutamos el estado, siempre creamos uno nuevo:
-
-```jsx
-// ❌ MAL — muta el estado directamente
-tareas[0].completada = true
-
-// ✅ BIEN — crea un array nuevo con .map()
-tareas.map(t =>
-  t.id === id
-    ? { ...t, completada: !t.completada }
-    : t
-)
-```
-
----
-
-## Eliminar con `.filter()`
-
-Devuelve todos menos el que queremos borrar:
-
-```jsx
-tareas.filter(t => t.id !== id)
-```
+Albaro — 2do año Analista en Sistemas

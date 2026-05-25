@@ -1,37 +1,121 @@
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  width: 200px;
-  text-align: center;
+/* ===== VARIABLES Y RESET ===== */
+:root {
+  --color-primario: #007bff;
+  --color-secundario: #28a745;
+  --color-peligro: #dc3545;
+  --color-gris: #6c757d;
+  --color-fondo: #f8f9fa;
+  --color-borde: #dee2e6;
+  --border-radius: 8px;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.precio {
-  color: green;
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 32px;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 16px;
+  padding: 32px;
 }
 
-/* Estilos para el contador de clics */
+/* ===== CARD ===== */
+.card {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  width: 200px;
+  text-align: center;
+  background-color: white;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--color-gris);
+}
+
+.precio {
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ===== CONTADOR ===== */
 .contador {
   text-align: center;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 200px;
-  margin: 16px;
+  padding: 24px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--sombra);
+  width: 220px;
 }
 
 .contador button {
@@ -39,16 +123,34 @@
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primario);
+  color: white;
+  transition: background-color 0.2s;
 }
 
-/* Estilos para el formulario de contacto */
+.contador button:hover {
+  background-color: #0056b3;
+}
 
+.contador button:disabled {
+  background-color: var(--color-gris);
+  cursor: not-allowed;
+}
+
+/* ===== FORMULARIO ===== */
 .form-container {
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--sombra);
   width: 350px;
-  margin: 16px;
+}
+
+.form-container h2 {
+  margin-bottom: 16px;
 }
 
 .form-container div {
@@ -65,35 +167,61 @@
 .form-container textarea {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 .form-container button {
-  padding: 8px 16px;
-  background-color: #007bff;
+  padding: 10px 20px;
+  background-color: var(--color-primario);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
 }
 
 .form-container button:disabled {
-  background-color: #ccc;
+  background-color: var(--color-gris);
   cursor: not-allowed;
 }
 
 .preview {
   margin-top: 16px;
   padding: 12px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+  background-color: var(--color-fondo);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-borde);
 }
 
-/* Estilos para Lista de Productos */
+.preview h3 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--color-gris);
+}
 
+/* ===== PRODUCT LIST ===== */
 .product-list {
-  padding: 16px;
+  padding: 24px;
+  width: 100%;
+}
+
+.product-list h2 {
+  margin-bottom: 16px;
 }
 
 .filtros {
@@ -105,8 +233,9 @@
 
 .filtros select {
   padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-borde);
+  font-size: 14px;
 }
 
 .filtros label {
@@ -116,40 +245,54 @@
   cursor: pointer;
 }
 
-/* Estilos para Formuario de Tareas Todo APP */ 
-
+/* ===== TODO APP ===== */
 .todo-container {
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--sombra);
   width: 350px;
-  margin: 16px;
+}
+
+.todo-container h2 {
+  margin-bottom: 8px;
 }
 
 .todo-form {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .todo-form input {
   flex: 1;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.todo-form input:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 .todo-form button {
   padding: 8px 16px;
-  background-color: #28a745;
+  background-color: var(--color-secundario);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .todo-form button:disabled {
-  background-color: #ccc;
+  background-color: var(--color-gris);
   cursor: not-allowed;
 }
 
@@ -162,34 +305,48 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-borde);
 }
 
 .todo-lista li span {
   cursor: pointer;
+  flex: 1;
 }
 
 .todo-lista li.completada span {
   text-decoration: line-through;
-  color: #aaa;
+  color: var(--color-gris);
 }
 
-.todo-lista li button {
+.btn-realizada {
   padding: 4px 8px;
-  background-color: #dc3545;
+  background-color: var(--color-secundario);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.btn-eliminar {
+  padding: 4px 8px;
+  background-color: var(--color-peligro);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 12px;
 }
 
 .pendientes {
   font-weight: bold;
-  color: #007bff;
+  color: var(--color-primario);
 }
 
 .sin-tareas {
-  color: #aaa;
+  color: var(--color-gris);
   text-align: center;
+  margin-top: 16px;
 }
